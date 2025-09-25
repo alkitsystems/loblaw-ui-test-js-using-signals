@@ -1,0 +1,311 @@
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* Page container */
+.container {
+  max-width: 900px;
+  margin: 2em auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  padding: 2em;
+  width: 95%;
+  box-sizing: border-box;
+}
+
+/* Dashboard tiles grid: 3 columns x 3 rows for large screens */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 1em;
+  margin-top: 2em;
+}
+
+/* For smaller screens: 1 column x 1 row (tiles stack vertically) */
+@media (max-width: 991.98px) {
+  .tiles {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.7em;
+  }
+}
+
+/* Campaign list as grid */
+.campaign-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1em;
+  padding: 0;
+  list-style: none;
+  justify-items: center;
+  align-items: center;
+}
+
+.campaign-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* For smaller screens: 2 columns, 3 rows */
+@media (max-width: 991.98px) {
+  .campaign-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
+/* Login page */
+.login-container {
+  max-width: 400px;
+  margin: 3em auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  padding: 2em 2em 1.5em 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  box-sizing: border-box;
+}
+
+.login-title {
+  color: #1976d2;
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.login-input,
+.login-btn {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-input {
+  font-size: 1.1em;
+  padding: 0.7em 1em;
+  border-radius: 4px;
+  border: 1px solid #bbdefb;
+  background: #e3f2fd;
+  color: #2d3a4b;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.login-input:focus {
+  border: 1.5px solid #1976d2;
+}
+
+.login-label {
+  font-size: 1em;
+  font-weight: 600;
+  color: #1976d2;
+  text-align: left;
+}
+
+.login-btn {
+  font-size: 1.1em;
+  font-weight: 600;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.7em 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-btn:hover {
+  background: #1565c0;
+}
+
+/* NavBar */
+.MuiToolbar-root {
+  flex-wrap: wrap;
+  padding-left: 0.5em !important;
+  padding-right: 0.5em !important;
+}
+
+.navbar-item {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-transform: none !important;
+  text-decoration: none;
+  margin-right: 1em;
+  background: transparent;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background 0.2s;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.navbar-item:hover,
+.navbar-item.active {
+  background: #1976d2;
+  color: #bbdefb;
+}
+
+/* MetricTile */
+.tile {
+  background: #e3f2fd;
+  border-radius: 6px;
+  padding: 1.2em;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  margin: 0.5em 0;
+}
+
+.tile-label {
+  font-size: 1em;
+  color: #1976d2;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.tile-value {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #2d3a4b;
+}
+
+.error {
+  color: #d32f2f;
+  font-size: 1.1em;
+  margin-top: 1em;
+}
+
+.loader {
+  color: #1976d2;
+  font-size: 1.1em;
+  margin-top: 1em;
+}
+
+/* xs: 0+ */
+@media (max-width: 575.98px) {
+  .container,
+  .login-container {
+    max-width: 100vw;
+    width: 100vw;
+    min-width: 0;
+    padding: 0.5em 0.2em;
+    margin: 0.5em 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .login-title {
+    font-size: 1.1em;
+  }
+  .navbar-item {
+    font-size: 0.95em;
+    padding: 0.3em 0.5em;
+    margin-right: 0.3em;
+  }
+}
+
+/* sm: 576+ */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container,
+  .login-container {
+    max-width: 540px;
+    padding: 1em;
+  }
+
+  .navbar-item {
+    font-size: 1em;
+    padding: 0.4em 0.7em;
+    margin-right: 0.5em;
+  }
+}
+
+/* md: 768+ */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container,
+  .login-container {
+    max-width: 720px;
+    padding: 1.5em;
+  }
+
+  .navbar-item {
+    font-size: 1.05em;
+    padding: 0.5em 1em;
+    margin-right: 0.7em;
+  }
+}
+
+/* lg: 992+ */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container,
+  .login-container {
+    max-width: 960px;
+    padding: 2em;
+  }
+
+  .navbar-item {
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    margin-right: 1em;
+  }
+}
+
+/* xl: 1200+ */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .container,
+  .login-container {
+    max-width: 1140px;
+    padding: 2em;
+  }
+
+  .navbar-item {
+    font-size: 1.15em;
+    padding: 0.6em 1.2em;
+    margin-right: 1.2em;
+  }
+}
+
+/* xxl: 1400+ */
+@media (min-width: 1400px) {
+  .container,
+  .login-container {
+    max-width: 1320px;
+    padding: 2.5em;
+  }
+
+  .navbar-item {
+    font-size: 1.2em;
+    padding: 0.7em 1.5em;
+    margin-right: 1.5em;
+  }
+}
+
+h2 .MuiSkeleton-root {
+  margin-left: auto;
+  margin-right: auto;
+}
